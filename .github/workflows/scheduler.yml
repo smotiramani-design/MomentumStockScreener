@@ -1,9 +1,7 @@
 name: Stock Screener
-
 on:
   schedule:
     - cron: '15 13 * * 1-5'  # 9:15 AM EDT (UTC-4) Mon-Fri
-                               # Change to '15 14 * * 1-5' in Nov-Mar (EST = UTC-5)
   workflow_dispatch:           # manual trigger from GitHub Actions tab
 
 jobs:
