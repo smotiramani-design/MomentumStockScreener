@@ -3,7 +3,7 @@ name: Stock Screener
 on:
   workflow_dispatch: 
   schedule:
-    - cron: '50 17 * * 1-5'
+    - cron: '2 00 * * *'
       timezone: 'America/New_York'
   
 
