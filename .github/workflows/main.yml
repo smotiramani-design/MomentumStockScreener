@@ -1,46 +1,12 @@
 name: AutoRunner
-
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   schedule:
-    - cron: '18 04 * * *'
-
-  
+    - cron: '32 04 * * *'
 
 jobs:
   run-screener:
     runs-on: ubuntu-latest
-
-    env:
-      # These come from GitHub → Settings → Secrets and variables → Actions
-      FMP_API_KEY:          ${{ secrets.FMP_API_KEY }}
-      SMTP_USER:            ${{ secrets.SMTP_USER }}
-      SMTP_PASSWORD:        ${{ secrets.SMTP_PASSWORD }}
-      EMAIL_RECIPIENTS:     ${{ secrets.EMAIL_RECIPIENTS }}
-      SMS_TO_NUMBERS:       ${{ secrets.SMS_TO_NUMBERS }}
-      TWILIO_ACCOUNT_SID:   ${{ secrets.TWILIO_ACCOUNT_SID }}
-      TWILIO_AUTH_TOKEN:    ${{ secrets.TWILIO_AUTH_TOKEN }}
-      TWILIO_FROM_NUMBER:   ${{ secrets.TWILIO_FROM_NUMBER }}
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run screener
-        run: python main.py --email --sms
-
-      - name: Upload reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: screener-reports-${{ github.run_id }}
-          path: output/
-          retention-days: 30
+      - name: Test automation
+        run: echo "Workflow triggered successfully at $(date)"
