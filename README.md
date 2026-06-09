@@ -1,3 +1,4 @@
+## Author: Sanjay Motiramani
 ## Pre-Market Momentum Screener — Setup & Usage
 
 ### Prerequisites
