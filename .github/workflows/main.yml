@@ -1,4 +1,4 @@
-name: Stock Screener
+name: AutoRunner
 
 on:
   workflow_dispatch: 
